@@ -4,38 +4,37 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace project_1
+namespace project2
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(" Please enter first number:");
-            int startNun = int.Parse(Console.ReadLine());
+            int sum;
+            int min, max;
 
+            Console.Write("Please enter first number : ");
+            min = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("please enter seconed number:");
+            Console.Write("Please enter second number : ");
+            max = Convert.ToInt32(Console.ReadLine());
 
+            Console.Write("The Perfect numbers between the number  is : \n");
 
-            int endNum = int.Parse(Console.ReadLine());
-            Console.WriteLine("These are the numbers between {0} and {1}", startNun, endNum);
-            for (int i = startNun; i <= endNum; i++)
+            for (int i = min; i <= max; i++)
             {
-                int counter = 0;
-                for (int j = 2; j <= i / 2; j++)
+                sum = 0;
+                for (int j = 1; j < i; j++)
                 {
                     if (i % j == 0)
-                    {
-                        counter++;
-                        break;
-                    }
-
+                        sum += j;
                 }
-                if (counter == 0 && i != 1)
-                {
+                if (sum == i)
                     Console.WriteLine(" {0} ", i);
-                }
-                Console.ReadKey();
+
+                  Console.ReadKey();
+  
+
             }
         }
     }
